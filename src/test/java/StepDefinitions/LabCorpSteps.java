@@ -49,13 +49,13 @@ public class LabCorpSteps {
         String actualJobTitle = jobTitleElement.getText();
 
         String expectedJobTitle = "Quality Analyst";
-        Assert.assertEquals(actualJobTitle, expectedJobTitle, "Job title is not as expected");
+        Assert.assertEquals(actualJobTitle, expectedJobTitle);
     }
     
     @Then("I confirm job location")
     public void iConfirmJobLocation() {
 
-        WebElement jobLocationElement = driver.findElement(By.xpath("//span[@class='job-location']"));
+        WebElement jobLocationElement = driver.findElement(By.xpath("//span[@class='au-target job-location']"));
         
 
         String actualJobLocation = jobLocationElement.getText();
@@ -64,23 +64,23 @@ public class LabCorpSteps {
         String expectedJobLocation = "Buffalo, New York, United States of America";
         
 
-        Assert.assertEquals(actualJobLocation, expectedJobLocation, "Job location is not as expected");
+        Assert.assertEquals(actualJobLocation, expectedJobLocation);
     }
 
     @Then("I confirm job ID")
     public void iConfirmJobID() {
 
-        WebElement jobIDElement = driver.findElement(By.xpath("//span[@class='job-id']"));
+        WebElement jobIDElement = driver.findElement(By.xpath("//span[@class='au-target jobId']"));
         String actualJobID = jobIDElement.getText();
         String expectedJobID = "246982";
-        Assert.assertEquals(actualJobID, expectedJobID, "Job ID is not as expected");
+        Assert.assertEquals(actualJobID, expectedJobID);
     }
     
     @Then("I confirm job details")
     public void iConfirmJobDetails() {
 
-        WebElement descriptionElement = driver.findElement(By.xpath("//div[@class='job-description']"));
-        WebElement requirementsElement = driver.findElement(By.xpath("//div[@class='requirements']"));
+        WebElement descriptionElement = driver.findElement(By.xpath("//div[@class='jd-info au-target']//p[1]"));
+        WebElement requirementsElement = driver.findElement(By.xpath("//div[@class='jd-info au-target']//ul//li[1]//li[1]"));
         
 
         String expectedDescription = "OmniSeq by Labcorp is seeking a Quality Analyst to join our team in Buffalo, NY! The right candidate must have experience in either in a NYS permitted clinical laboratory, or a biopharma / research-based laboratory.";
